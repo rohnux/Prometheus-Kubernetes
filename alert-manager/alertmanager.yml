@@ -1,0 +1,16 @@
+global:
+  resolve_timeout: 5m
+route:
+  receiver: 'msteam-webhook'
+  group_by: ['team']
+  group_interval: 2m
+  group_wait: 3s
+  repeat_interval: 1h
+receivers:
+- name: 'msteam-webhook'
+  webhook_configs:
+  - url: http://127.0.0.1:2000/alertmanager
+    send_resolved: true
+#  pagerduty_configs:
+#  - service_key: dbf31ca4d7904554a284d5a6bf27868c
+#    send_resolved: true
