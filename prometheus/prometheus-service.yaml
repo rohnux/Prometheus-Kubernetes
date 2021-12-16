@@ -14,3 +14,6 @@ spec:
     - port: 8080
       targetPort: 9090
       nodePort: 31000
+
+
+# For accesing the application outside the cluster -> kubectl port-forward pods/prometheus-deployment-7cdb4c6c48-xwrgs 8000:9090 -n monitoring
